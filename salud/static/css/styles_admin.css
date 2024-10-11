@@ -1,0 +1,77 @@
+/* styles.css */
+
+/* Colores base */
+:root {
+    --primary-color: #007bff; /* Azul Bootstrap */
+    --secondary-color: #6c757d; /* Gris claro Bootstrap */
+    --background-color: #f8f9fa; /* Blanco Bootstrap */
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+  }
+  
+  /* Navbar lateral */
+  .sidebar {
+    background-color: var(--primary-color);
+    color: white;
+    height: 80vh;
+    border-radius: 0px 10px 10px 0px;
+    text-align: start;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  
+  .sidebar a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+    border-radius: 0px 10px 10px 0px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #0062cc;
+  }
+  
+  /* Contenido principal */
+  .content {
+    margin-left: 250px; /* Ancho de la sidebar */
+    padding: 20px;
+
+  }
+  
+  /* Formulario */
+  .card {
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-control {
+    border-radius: 0;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    color: black;
+    left: 0;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 10px;
+    border-top: white 1px;
+    width: 100%;
+    background-color: #007bff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Personaliza más estilos según tus preferencias */

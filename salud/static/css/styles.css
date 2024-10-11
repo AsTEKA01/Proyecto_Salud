@@ -1,0 +1,82 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-form {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            font-weight: bold, 10px;
+        }
+        form p {
+            text-align: center;
+            font-size: 14px;
+            padding-bottom: 30px;
+            color: #666;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .button:hover {
+            background-color: #ffffff; 
+            color: black;/* Color de fondo del botón al pasar el mouse */
+        }  
+        
+        .image-placeholder {
+            width: 420px;
+            height: 420px;
+            border-radius: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .alert {
+            margin-top: 20px; /* Espacio superior */
+            color: red; /* Color del texto de error */
+            background-color: #f8d7da; /* Color de fondo */
+            border: 1px solid red; /* Borde del mensaje */
+            padding: 10px; /* Espacio interno */
+            border-radius: 5px; /* Bordes redondeados */
+        }

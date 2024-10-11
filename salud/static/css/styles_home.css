@@ -1,0 +1,47 @@
+
+/* Estilos básicos */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    padding: 1%;
+    
+}
+
+.bi-house-door {
+    padding-right: 3px;
+}
+
+.bi-person-circle{
+    padding-right: 3px;
+}
+
+.dropdown-item {
+    color: black;
+    padding-bottom: 10px;
+    font-size: 110%;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dropdown-item:hover {
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: #c5c5c5;
+}
+
+/* Estilos personalizados */
+.table {
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, #4CAF50, #339966);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación al pasar el mouse sobre los botones */
+.btn:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
