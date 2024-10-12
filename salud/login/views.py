@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import CustomLoginForm
-from home.models import OrdenLaboratorio
+from home.obervaciones_lab import OrdenLaboratorios
 from django.contrib import messages
 
 def login_view(request):
@@ -9,17 +9,6 @@ def login_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
-
-def name_sal(request):
-    if request.user.is_authenticated:
-        context = {'user': request.user}
-        return render(request, 'home.html', context)
-    observaciones = OrdenLaboratorio.objects.all()
-    return render(request, 'home.html', {'observaciones': observaciones}) 
-
-def lista_observaciones(request):
-    observaciones = OrdenLaboratorio.objects.all()
-    return render(request, 'home.html', {'observaciones': observaciones})    
 
 def custom_login_view(request):
     if request.method == 'POST':
