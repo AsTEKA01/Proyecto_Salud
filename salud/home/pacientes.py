@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
-from home.models import administrador_salud, sexo_biologico
+from home.models import administrador_salud, sexo_biologico        
+from datetime import date
 
 class Persona(AbstractBaseUser, PermissionsMixin):
     TIPOS_IDENTIFICACION = [
@@ -44,4 +45,8 @@ class Persona(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['email', 'tipo_identificacion', 'fecha_nac']
 
     def __str__(self):
-        return f"{self.numero_id}  / {self.nombre1}  / {self.apellido1} / {self.apellido2}"
+        return f" {self.nombre1}  {self.apellido1}  {self.apellido2}"
+
+    def calcular_edad(self):
+        today = date.today()
+        return today.year - self.fecha_nac.year - ((today.month, today.day) < (self.fecha_nac.month, self.fecha_nac.day))

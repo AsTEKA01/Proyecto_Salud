@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from .obervaciones_lab import OrdenLaboratorios
@@ -31,3 +31,25 @@ def list_orden(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'home.html', {'ordenes': ordenes})
+
+def ver_examen(request, id):
+    orden = get_object_or_404(OrdenLaboratorios, id=id)
+
+    # Verifica si orden.persona está correctamente referenciada
+    if orden.paciente:
+        edad = orden.paciente.calcular_edad()  # Llama al método para calcular la edad
+        sexo = orden.paciente.sexo_biologico # Obtén el sexo directamente
+        identificacion = orden.paciente.numero_id # aqui obtengo el numero de documento del paciente
+        number = orden.paciente.tel_movil # aqui obtengo el numero de documento del paciente
+    else:
+        edad = None
+        sexo = None
+
+    context = {
+        'orden': orden,
+        'edad': edad,
+        'sexo': sexo,
+        'identificacion': identificacion,
+        'number': number,
+    }
+    return render(request, 'home_view.html', context)

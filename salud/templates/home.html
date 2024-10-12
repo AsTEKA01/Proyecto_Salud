@@ -88,7 +88,7 @@
                                 <td>{{ orden.documento_orden }}</td>
                                 <td>{{ orden.numero_orden }}</td>
                                 <td>
-                                    <a href="" class="btn btn-info">Ver Orden</a>
+                                    <a href="{% url 'ver_examen' orden.id %}" class="btn btn-info">Ver Orden</a>
                                 </td>
                             </tr>
                         {% empty %}
