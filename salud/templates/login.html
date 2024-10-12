@@ -15,20 +15,19 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
             <form method="post">
                 {% csrf_token %}
-                <label for="tipo_id">Tipo de Identificación</label>
-                <select id="tipo_id" name="tipo_id">
-                    <option value="CC">Cédula de Ciudadanía</option>
-                    <option value="TI">Tarjeta de Identidad</option>
-                    <option value="CE">Cédula de Extranjería</option>
-                </select>
                 
-                <label for="numero_id">Número de Identificación</label>
-                <input type="text" id="numero_id" name="numero_id" required>
-
+                <label for="tipo_identificacion">Tipo de Identificación</label>
+                {{form.tipo_identificacion}}
+                </select>
+            
+                <label for="numero_identificacion">Número de Identificación</label>
+                <input type="text" id="numero_id" name="numero_id">
+            
                 <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required> <br>
+                <input type="date" id="fecha_nac" name="fecha_nac">
+            
 
-                <button type="submit">Ingresar</button>
+                <button type="submit">Iniciar Sesion</button>
 
                 {% if messages %}
                 <div class="alert">
