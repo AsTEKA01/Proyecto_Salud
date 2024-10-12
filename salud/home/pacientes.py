@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from home.models import administrador_salud, sexo_biologico        
 from datetime import date
+#No se puede hacer una relacion con el modulo de observacioneslaboratorios
 
 class Persona(AbstractBaseUser, PermissionsMixin):
     TIPOS_IDENTIFICACION = [

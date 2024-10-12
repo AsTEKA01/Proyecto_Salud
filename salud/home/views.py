@@ -41,6 +41,10 @@ def ver_examen(request, id):
         sexo = orden.paciente.sexo_biologico # Obtén el sexo directamente
         identificacion = orden.paciente.numero_id # aqui obtengo el numero de documento del paciente
         number = orden.paciente.tel_movil # aqui obtengo el numero de documento del paciente
+        
+    if orden.medico:
+        medico = orden.medico.nombre
+
     else:
         edad = None
         sexo = None
@@ -51,5 +55,6 @@ def ver_examen(request, id):
         'sexo': sexo,
         'identificacion': identificacion,
         'number': number,
+        'medico': medico
     }
     return render(request, 'home_view.html', context)

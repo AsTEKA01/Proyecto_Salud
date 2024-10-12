@@ -12,22 +12,25 @@
     <div class="container">
         <div class="login-form">
             <h2>Iniciar sesión</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+            <center>
+            <p class="text_salud">"Tu salud es tu mayor riqueza. Invierte en ella cada día. ¡Bienvenido a tu espacio de bienestar!.</p><br>
+            </center>
             <form method="post">
                 {% csrf_token %}
                 
-                <label for="tipo_identificacion">Tipo de Identificación</label>
+                <label for="tipo_identificacion"><strong>Tipo de Identificación</strong></label>
                 {{form.tipo_identificacion}}
                 </select>
-            
-                <label for="numero_identificacion">Número de Identificación</label>
+
+                <label for="numero_identificacion"><strong>Número de Identificación</strong></label>
                 <input type="text" id="numero_id" name="numero_id">
             
-                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <label for="fecha_nacimiento"><strong>Fecha de Nacimiento</strong></label>
                 <input type="date" id="fecha_nac" name="fecha_nac">
             
-
-                <button type="submit">Iniciar Sesion</button>
+                <div class="d-grid gap-2 col-6 mx-auto"><br>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
 
                 {% if messages %}
                 <div class="alert">

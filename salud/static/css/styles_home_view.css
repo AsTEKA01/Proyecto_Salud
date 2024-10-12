@@ -1,7 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
-    padding: 18px;
 }
 
 .bi-house-door {
@@ -13,13 +12,15 @@ body {
 }
 
 .sidebar {
-    height: 100vh;
-    width: 210px;
+    height: 95vh;
+    width: 225px;
     position: fixed;
     border-radius: 10px;
     background-color: #fffefe;
     padding-top: 20px;
-    padding: 10px;
+    padding: 15px;
+    margin: 14px;
+    border: 1px solid rgb(131, 127, 127);
 }
 
 .sidebar a {
@@ -41,15 +42,15 @@ body {
 }
 
 .container-main {
-    margin-left: 220px; /* Deja espacio para la barra lateral */
-    padding: 20px;
+    margin-left: 240px; /* Deja espacio para la barra lateral */
+    padding: 15px;
 }
 
 .header {
     background-color: #17A2B8;
     color: white;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;

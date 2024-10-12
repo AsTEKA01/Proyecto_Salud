@@ -43,7 +43,7 @@
                         <h3 class="text_name_pac">¡Bienvenido, {{ user.nombre1 }} {{ user.apellido1 }} {{ user.apellido2 }}!</h3>
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+                            <button type="submit" class="btn btn-outline-danger">Cerrar sesión</button>
                         </form>
 
                     </div>
@@ -58,7 +58,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="numero_orden">Número de Orden</label>
-                            <input type="text" class="form-control" id="numero_orden" name="numero_orden" placeholder="Ingresa el número de orden">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="fecha_inicio">Fecha de Inicio</label>
@@ -69,7 +69,7 @@
                             <input type="date" class="form-control" id="fecha_fin" name="fecha_fin">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <br>
                 <table class="table table-striped table-bordered">
@@ -78,7 +78,7 @@
                             <th>Fecha de Orden</th>
                             <th>Documento de la Orden</th>
                             <th>Número de Orden</th>
-                            <th>Acciones</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +88,7 @@
                                 <td>{{ orden.documento_orden }}</td>
                                 <td>{{ orden.numero_orden }}</td>
                                 <td>
-                                    <a href="{% url 'ver_examen' orden.id %}" class="btn btn-info">Ver Orden</a>
+                                    <a href="{% url 'ver_examen' orden.id %}" class="btn btn-outline-primary">Ver Orden</a>
                                 </td>
                             </tr>
                         {% empty %}

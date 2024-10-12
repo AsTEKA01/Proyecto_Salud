@@ -10,14 +10,14 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: space;
             align-items: center;
             height: 100vh;
         }
         .login-form {
             width: 400px;
             padding: 20px;
-            background-color: white;
+            background-color: rgb(223, 223, 223);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -28,6 +28,11 @@
             margin-bottom: 10px;
             font-weight: bold, 10px;
         }
+
+        .text_salud{
+            text-align: center;
+        }
+
         form p {
             text-align: center;
             font-size: 14px;
@@ -46,16 +51,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 19px;
-        }
+
 
         .button:hover {
             background-color: #ffffff; 

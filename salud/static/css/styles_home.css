@@ -5,8 +5,19 @@
 }
 
 .navbar {
-    border: 1px solid #ccc; /* Adjust the border color and style as needed */
+    border: 1px solid rgb(201, 199, 199); /* Adjust the border color and style as needed */
     border-radius: 10px; /* Add rounded corners if desired */
+    
+}
+
+#sidebarMenu {
+    border-radius: 10px;
+    border: 1px solid rgb(201, 199, 199);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.26);
+}
+
+#sidebarMenu a {
+    font-weight: 600;
 }
 
 table {
@@ -62,12 +73,12 @@ body {
 .table {
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.295);
 }
 
 .btn-primary {
     background-image: linear-gradient(to right, #4CAF50, #339966);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(92, 91, 91, 0.2);
 }
 
 /* Animación al pasar el mouse sobre los botones */
