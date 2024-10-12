@@ -38,7 +38,7 @@
                       <a class="navbar-brand" href="#">
                         <img src="{% static 'img/perfil.png' %}" alt="user" width="60" height="60">
                         </a>
-                        <h3 class="text_name_pac">¡Bienvenido, {{ nombre }}!</h3>
+                        <h3 class="text_name_pac">¡Bienvenido, {{ user.nombre1 }} {{ user.apellido1 }} {{ user.apellido2 }}!</h3>
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-danger">Cerrar sesión</button>
@@ -84,7 +84,7 @@
                     <tbody>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>XXXXXXXXXXXX</td>
+                            <td>{{ observaciones.fecha_orden }}</td>
                             <td>XXXXXXXXXXXX</td>
                             <td>XXXXXXXXXXXX</td>
                             <td><button class="btn btn-sm btn-secondary">XXX</button></td>

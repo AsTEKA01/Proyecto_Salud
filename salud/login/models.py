@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.utils import timezone
-from home.models import administrador_salud, sexo_biologico
+from home.models import administrador_salud, sexo_biologico, OrdenLaboratorio
 
 class PersonaManager(BaseUserManager):
     def create_user(self, tipo_identificacion, numero_id, fecha_nac, email, password=None, **extra_fields):
@@ -26,15 +26,13 @@ class Persona(AbstractBaseUser, PermissionsMixin):
     apellido1 = models.CharField(max_length=50)
     apellido2 = models.CharField(max_length=50)
     nombre1 = models.CharField(max_length=50)
-    nombre2 = models.CharField(max_length=50, null=True)
+    nombre2 = models.CharField(max_length=50, default='No especificado', null=False)
     fecha_nac = models.DateField()
     email = models.EmailField(unique=True)
-    id_sexo_biologico = models.ForeignKey(sexo_biologico, on_delete=models.SET_NULL, null=True)
+    sexo_biologico = models.ForeignKey(sexo_biologico, on_delete=models.SET_NULL, null=True)
     admin_salud = models.ForeignKey(administrador_salud, on_delete=models.SET_NULL, null=True)
     direccion = models.TextField(null=True)
     tel_movil = models.CharField(max_length=20, null=True)
-    # Aquí hacemos que el campo password sea opcional
-    password = models.CharField(max_length=128, null=True)  
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -59,3 +57,7 @@ class Persona(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return f"{self.numero_id}  / {self.nombre1}  / {self.apellido1}"
+
+class orden_result_pac(models.Model):
+    paciente = models.ForeignKey(Persona, on_delete=models.CASCADE)  # Llave foránea a Persona
+    orden_lab = models.ForeignKey(OrdenLaboratorio, on_delete=models.CASCADE)  #Llave foránea a OrdenLaboratorio

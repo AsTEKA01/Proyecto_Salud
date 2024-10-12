@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class OrdenLaboratorio(models.Model):
     fecha_orden = models.DateField()
     documento_orden = models.CharField(max_length=50)
@@ -32,7 +33,7 @@ class medico (models.Model):
     telefono = models.CharField(max_length=12)
 
     def __str__(self):
-         return self.nombre
+        return self.nombre
     
 class administrador_salud (models.Model):
     nombre = models.CharField(max_length=60)
