@@ -18,7 +18,7 @@ class Persona(AbstractBaseUser, PermissionsMixin):
     apellido1 = models.CharField(max_length=50)
     apellido2 = models.CharField(max_length=50)
     nombre1 = models.CharField(max_length=50)
-    nombre2 = models.CharField(max_length=50, default='No especificado', null=False)
+    nombre2 = models.CharField(max_length=50, db_default='None', null=False)
     fecha_nac = models.DateField()
     email = models.EmailField(unique=True)
     sexo_biologico = models.ForeignKey(sexo_biologico, on_delete=models.SET_NULL, null=True)

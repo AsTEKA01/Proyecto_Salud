@@ -23,6 +23,7 @@ class OrdenLaboratorios(models.Model):
     documento_orden = models.CharField(max_length=50)
     name_group = models.CharField(max_length=50, default='Desconocida', choices=NAME_GROUP)
     numero_orden = models.IntegerField()
+    observaciones = models.CharField(max_length=300, db_default='Sin Observacion')
     codigo_prueba = models.CharField(max_length=20)
     nombre_prueba = models.CharField(max_length=100)
     resultado = models.CharField(max_length=200)  # Ajusta el tamaño según tus necesidades
@@ -32,3 +33,5 @@ class OrdenLaboratorios(models.Model):
     def __str__(self):
         return f"Orden #{self.numero_orden} - {self.nombre_prueba} - {self.fecha_orden} - {self.paciente}"
     
+    def __strpac__(self):
+        return f"{self.paciente.numero_id}"

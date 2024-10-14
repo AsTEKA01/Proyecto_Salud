@@ -35,6 +35,9 @@ body {
     border-radius: 10px;
 }
 
+a {
+    font-weight: 600;
+}
 .sidebar a:hover {
     background-color: #c5c5c5;
     color: rgb(0, 0, 0);

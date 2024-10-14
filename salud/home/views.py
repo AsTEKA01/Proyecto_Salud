@@ -30,7 +30,8 @@ def list_orden(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'home.html', {'ordenes': ordenes})
+
+    return render(request, 'home.html', {'ordenes': ordenes, 'page_obj': page_obj})
 
 def ver_examen(request, id):
     orden = get_object_or_404(OrdenLaboratorios, id=id)

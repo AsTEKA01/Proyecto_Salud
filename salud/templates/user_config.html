@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Paciente</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/styles_user.css' %}">
+</head>
+<body>
+
+    <!-- Wrapper que contiene la barra lateral y el contenido -->
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="{% url 'home' %}"><i class="bi bi-house-door"></i> Home</a>
+            <a href="{% url 'config' %}"><i class="bi bi-person-circle"></i> Perfil del usuario</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Welcome Section -->
+            <div class="welcome-section d-flex justify-content-center align-items-center">
+                <div>
+                    <img src="{% static 'img/icono.png'%}" width="100px" alt="imagen" class="img-fluid rounded-circle">
+                </div>
+                <div class="welcome-text">
+                    <h2>Bienvenido</h2>
+                    <p>¡Hola, {{ user.nombre1 }} {{ user.apellido1 }} {{ user.apellido2 }}!</p>
+                </div>
+            </div>
+
+            <!-- User Info Section -->
+            <div class="card-grid">
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-card-text"></i>
+                    </div>
+                    <p class="user-info">TIPO DE IDENTIFICACIÓN</p>
+                    <p>{{user.tipo_identificacion}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-credit-card"></i>
+                    </div>
+                    <p class="user-info">NÚMERO DE IDENTIFICACIÓN</p>
+                    <p>{{user.numero_id}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <p class="user-info">NOMBRE</p>
+                    <p>{{user.nombre1}} {{name2}} {{user.apellido1}} {{user.apellido2}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-calendar"></i>
+                    </div>
+                    <p class="user-info">FECHA DE NACIMIENTO</p>
+                    <p>{{user.fecha_nac}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-gender-ambiguous"></i>
+                    </div>
+                    <p class="user-info">SEXO BIOLÓGICO</p>
+                    <p>{{user.sexo_biologico}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-house-door"></i>
+                    </div>
+                    <p class="user-info">DIRECCIÓN DE RESIDENCIA</p>
+                    <p>{{user.direccion}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <p class="user-info">NÚMERO DE CELULAR</p>
+                    <p>{{user.tel_movil}}</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <p class="user-info">CORREO ELECTRÓNICO</p>
+                    <p>{{user.email}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

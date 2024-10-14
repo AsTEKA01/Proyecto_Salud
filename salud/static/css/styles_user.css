@@ -1,0 +1,91 @@
+/* Estilos personalizados */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Estilo para la barra lateral */
+.sidebar {
+    height: 95vh;
+    width: 225px;
+    position: fixed;
+    border-radius: 10px;
+    background-color: #fffefe;
+    padding-top: 20px;
+    padding: 15px;
+    margin: 14px;
+    border: 1px solid rgb(131, 127, 127);
+}
+
+.btn-outline-danger {
+    margin-top: 410px;
+    margin-left: 30px;
+}
+
+.sidebar a {
+    padding: 15px 10px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    padding: 11px;
+    display: block;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #c5c5c5;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.card-grid p {
+    font-weight: 600;
+}
+/* Estilo para el contenido principal */
+.content {
+    margin-left: 250px; /* Compensa el ancho de la barra lateral */
+    padding: 20px;
+    width: 100%;
+}
+
+.profile-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.welcome-text {
+    margin-left: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
