@@ -1,0 +1,52 @@
+
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1588776814546-1d92ff0d65e4?fit=crop&w=1600&q=80') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-section p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+.features-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+}
+.call-to-action {
+    background-color: #0d6efd;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.call-to-action h2 {
+    font-size: 2.5rem;
+}
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.benefits {
+    background-color: #f8f9fa;
+}
+.benefit-item i {
+    font-size: 2.5rem;
+    color: #0d6efd;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

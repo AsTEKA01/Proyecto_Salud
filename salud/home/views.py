@@ -31,7 +31,7 @@ def list_orden(request):
     page_obj = paginator.get_page(page_number)
 
 
-    return render(request, 'home.html', {'ordenes': ordenes, 'page_obj': page_obj})
+    return render(request, 'home.html', {'page_obj': page_obj})
 
 def ver_examen(request, id):
     orden = get_object_or_404(OrdenLaboratorios, id=id)
@@ -59,3 +59,6 @@ def ver_examen(request, id):
         'medico': medico
     }
     return render(request, 'home_view.html', context)
+
+def landing_page_view (request):
+    return render(request, 'landing_page.html')

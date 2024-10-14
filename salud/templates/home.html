@@ -104,13 +104,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for orden in ordenes %}
+                        {% for orden in page_obj %}
                             <tr>
-                                
                                 <td>{{ orden.fecha_orden }}</td>
                                 <td>{{ orden.documento_orden }}</td>
                                 <td>{{ orden.numero_orden }}</td>
-                                
                                 <td>
                                     <center>
                                     <a href="{% url 'ver_examen' orden.id %}" class="btn btn-outline-primary"><i class="bi bi-eye-fill"></i></a>
@@ -118,31 +116,70 @@
                                     </center>
                                 </td>
                             </tr>
-                            
                         {% empty %}
                             <tr>
                                 <td colspan="4" class="text-center">No tienes órdenes de laboratorio.</td>
                             </tr>
                         {% endfor %}
-                        <div class="pagination">
-                            <span class="step-links">
-                                {% if page_obj.has_previous %}
-                                    <a href="?page=1">&laquo; Primero</a>
-                                    <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
-                                {% endif %}
-                
-                                <span class="current">
-                                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
-                                </span>
-                
-                                {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
-                                    <a href="?page={{ page_obj.paginator.num_pages }}">Último &raquo;</a>
-                                {% endif %}
-                            </span>
-                        </div>
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="Paginación de órdenes">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1" aria-label="Primero">
+                                        <span aria-hidden="true">&laquo;&laquo;</span>
+                                        <span class="sr-only">Primero</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Anterior">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
+                                </li>
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&laquo;</span>
+                                </li>
+                            {% endif %}
+                
+                            <!-- Mostrar número de página actual -->
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                                </span>
+                            </li>
+                
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Siguiente">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Siguiente</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Último">
+                                        <span aria-hidden="true">&raquo;&raquo;</span>
+                                        <span class="sr-only">Último</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&raquo;</span>
+                                </li>
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                
             </main>
         </div>
     </div>
