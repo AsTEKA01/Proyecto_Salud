@@ -11,6 +11,10 @@
     flex-direction: column;
 }
 
+.card-body i {
+    color: #ffcc00;
+    margin-bottom: 2px;
+}
 .btn-outline-info:hover{
     color: white;
 }
@@ -28,7 +32,7 @@
     color: #0d6efd;
 }
 .call-to-action {
-    background-color: #0d6efd;
+    background-color: #335b86;
     color: white;
     padding: 50px 0;
     text-align: center;
@@ -61,7 +65,7 @@
 
         /* Estilos personalizados para el navbar */
         .navbar-custom {
-            background-color: #007bff;
+            background-color: #335b86;
         }
         .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
@@ -69,9 +73,11 @@
         }
         .navbar-custom .nav-link:hover {
             color: #ffcc00;
+            text-decoration: double;
         }
         .navbar-custom .btn-primary {
             background-color: #ffcc00;
+            text-decoration: double;
             border: none;
             color: #007bff;
         }
