@@ -1,6 +1,6 @@
 
 .hero-section {
-    background: url('https://images.unsplash.com/photo-1588776814546-1d92ff0d65e4?fit=crop&w=1600&q=80') no-repeat center center;
+    background-image: url("/static/img/banner.jpg");/* Cambia 'img/fondo.jpg' por la ruta de tu imagen */
     background-size: cover;
     height: 100vh;
     color: white;
@@ -9,6 +9,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.btn-outline-info:hover{
+    color: white;
 }
 .hero-section h1 {
     font-size: 4rem;
@@ -50,3 +54,27 @@
     height: auto;
     border-radius: 10px;
 }
+
+.logo_navbar {
+    margin-right: 10px;
+}
+
+        /* Estilos personalizados para el navbar */
+        .navbar-custom {
+            background-color: #007bff;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffcc00;
+        }
+        .navbar-custom .btn-primary {
+            background-color: #ffcc00;
+            border: none;
+            color: #007bff;
+        }
+        .navbar-custom .btn-primary:hover {
+            background-color: #ff9900;
+        }

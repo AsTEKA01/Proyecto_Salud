@@ -11,13 +11,47 @@
     <link rel="stylesheet" href="{% static 'css/styles_landing.css'%}">
 </head>
 <body>
-
+    <!-- Navbar llamativo -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <img src="{% static 'img/logo.png'%}" class='logo_navbar' alt="logo" width="80px" height="80px">
+            <a class="navbar-brand" href="#">Salud y Bienestar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Caracteristicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Beneficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-warning" href="#login"><strong>Iniciar sesión</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section id='home'class="hero-section">
         <div class="container">
             <h1>Salud y Bienestar</h1>
             <p>Accede de forma rápida y segura a tus órdenes de laboratorio.</p>
-            <a href="#services" class="btn btn-primary btn-lg mt-4">Descubre nuestros servicios</a>
+            <a href="#services" class="btn btn-outline-warning btn-lg mt-4"><strong>Descubre nuestros servicios</strong></a>
         </div>
     </section>
 
@@ -120,37 +154,72 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 text-center">
-        <div class="container">
-            <h2>Lo que opinan nuestros pacientes</h2>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <blockquote class="blockquote">
-                        <p>"Es increíble lo rápido que puedo obtener mis resultados desde cualquier lugar."</p>
-                        <footer class="blockquote-footer">María López</footer>
-                    </blockquote>
+<section id="testimonials" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="mb-5">Lo que opinan nuestros pacientes</h2>
+        <div class="row">
+            <!-- Testimonio 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <img src="{% static 'img/user3.png'%}" class="rounded-circle mb-3" alt="Paciente 1" width="80px" height="80px">
+                        <h5 class="card-title">María López</h5>
+                        <p class="card-text">"Es increíble lo rápido que puedo obtener mis resultados desde cualquier lugar. ¡Me ahorra mucho tiempo!"</p>
+                        <div class="card-footer text-muted">
+                            <small>Paciente desde 2023</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <blockquote class="blockquote">
-                        <p>"El sistema es tan fácil de usar que ni siquiera necesito asistencia técnica. ¡Excelente!"</p>
-                        <footer class="blockquote-footer">Juan Pérez</footer>
-                    </blockquote>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <img src="{% static 'img/user2.png'%}" class="rounded-circle mb-3" alt="Paciente 2" width="80px" height="80px">
+                        <h5 class="card-title">Juan Pérez</h5>
+                        <p class="card-text">"El sistema es tan fácil de usar que ni siquiera necesito asistencia técnica. ¡Excelente servicio!"</p>
+                        <div class="card-footer text-muted">
+                            <small>Paciente desde 2022</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <img src="{% static 'img/user1.png'%}" class="rounded-circle mb-3" alt="Paciente 3" width="80px" height="80px">
+                        <h5 class="card-title">Carolina Gómez</h5>
+                        <p class="card-text">"La mejor manera de mantenerme al tanto de mi salud. Puedo ver mis órdenes de laboratorio desde casa en segundos."</p>
+                        <div class="card-footer text-muted">
+                            <small>Paciente desde 2021</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Call to Action Section -->
     <section class="call-to-action">
-        <div class="container">
+        <div id="login" class="container">
             <h2>Empieza hoy a gestionar tus órdenes de laboratorio</h2>
             <p class="lead">Inicia sesion y accede a todos tus exámenes desde la comodidad de tu hogar.</p>
-            <a href="#" class="btn btn-outline-light btn-lg mt-3">Iniciar Sesion Usuario</a>
-            <a href="#" class="btn btn-outline-light btn-lg mt-3">Iniciar Sesion Admin</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg mt-3"><strong>Iniciar Sesion Usuario</strong></a>
+            <a href="http://localhost:8000/admin/login/?next=/admin/" class="btn btn-outline-light btn-lg mt-3"><strong>Iniciar Sesion Admin</strong></a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Salud
+            <p>&copy; www.vidaybienestar.com 2024</p>
+        </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
