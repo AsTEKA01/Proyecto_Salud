@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'home',
     'inf_pdf',
     'user_config',
+    'captcha',
 ]
 
 JAZZMIN_SETTINGS = {

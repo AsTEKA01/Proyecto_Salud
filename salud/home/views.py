@@ -26,7 +26,7 @@ def list_orden(request):
         ordenes = ordenes.filter(fecha_orden__range=[fecha_inicio, fecha_fin])
         
     # Paginación
-    paginator = Paginator(ordenes, 5)  # 5 órdenes por página
+    paginator = Paginator(ordenes, 10)  # 5 órdenes por página
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from login.views import custom_login_view
 from home.views import list_orden,ver_examen, landing_page_view
 from django.contrib.auth import views as auth_views
@@ -14,6 +14,8 @@ urlpatterns = [
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
     path('config', user_date, name='config'),
     path('home//<int:orden_id>/', generar_informe_pdf, name='generar_informe_pdf'),
-    path('', landing_page_view, name="landing")
+    path('', landing_page_view, name="landing"),
+    path('captcha/', include('captcha.urls')),  # Incluye las URLs de captcha
+
     
 ]
