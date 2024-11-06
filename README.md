@@ -1,4 +1,4 @@
-# Proyecto_Salud #Proyecto al 95% 
+# Proyecto_Salud #Proyecto al 100% 
 
 La creacion del entorno virtual se realizara por separado en cada miembro del equipo de trabajo, los pasos para descargar e instalar el entorno virtual son los siguientes (SIGA ESTOS PASOS)
 1. Se requiere python 3.12.5 para no ocurren conflictos con las versiones del entorno
